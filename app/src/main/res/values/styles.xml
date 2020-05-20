@@ -1,0 +1,44 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="logoHorizontal">@drawable/ic_animalogolight</item>
+        <item name="logoSubtitle">@drawable/ic_subtitlelight</item>
+        <item name="splashLogo">@drawable/ic_animalogolight</item>
+    </style>
+
+    <!-- Splash screen -->
+    <style name="Splash" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!--- Text styles -->
+
+    <style name="headers">
+        <item name="android:textColor">@color/header</item>
+        <item name="android:fontFamily">sans-serif-smallcaps</item>
+    </style>
+
+    <style name="mainText">
+        <item name="android:textColor">@color/text</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+
+    <style name="specialText">
+        <item name="android:textColor">@color/text</item>
+        <item name="android:fontFamily">casual</item>
+    </style>
+
+    <style name="buttons">
+        <item name="android:textColor">@color/background</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:background">@drawable/btn_bg</item>
+    </style>
+
+</resources>

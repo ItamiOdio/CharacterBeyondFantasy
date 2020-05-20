@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".CreateCharacter.CreateBasicsFragment" >
+
+    <EditText
+        android:id="@+id/writeName"
+        style="@style/specialText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/text"
+        android:ems="10"
+        android:fontFamily="casual"
+        android:hint="@string/character_name"
+        android:inputType="textPersonName"
+        android:maxLength="30"
+        android:selectAllOnFocus="true"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/basicsHead" />
+
+    <TextView
+        android:id="@+id/basicsHead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/basicsHead"
+        android:textColor="@color/header"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/writeName">
+
+        <TextView
+            android:id="@+id/textGender"
+            style="@style/headers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gender"
+            app:layout_constraintBottom_toBottomOf="@+id/writeGender"
+            app:layout_constraintEnd_toStartOf="@+id/writeGender"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/writeGender" />
+
+        <TextView
+            android:id="@+id/textAge"
+            style="@style/headers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/age"
+            app:layout_constraintBottom_toBottomOf="@+id/writeAge"
+            app:layout_constraintEnd_toEndOf="@+id/textGender"
+            app:layout_constraintStart_toStartOf="@+id/textGender"
+            app:layout_constraintTop_toTopOf="@+id/writeAge" />
+
+        <TextView
+            android:id="@+id/textEyes"
+            style="@style/headers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/eyes_color"
+            app:layout_constraintBottom_toBottomOf="@+id/writeEyes"
+            app:layout_constraintEnd_toEndOf="@+id/textAge"
+            app:layout_constraintStart_toStartOf="@+id/textAge"
+            app:layout_constraintTop_toTopOf="@+id/writeEyes" />
+
+        <EditText
+            android:id="@+id/writeAge"
+            style="@style/mainText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="@color/text"
+            android:ems="10"
+            android:fontFamily="sans-serif-light"
+            android:hint="25"
+            android:inputType="number"
+            android:maxLength="5"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/writeGender"
+            app:layout_constraintHorizontal_bias="0.28"
+            app:layout_constraintStart_toStartOf="@+id/writeGender"
+            app:layout_constraintTop_toBottomOf="@+id/writeGender" />
+
+        <EditText
+            android:id="@+id/writeGender"
+            style="@style/mainText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="28dp"
+            android:backgroundTint="@color/text"
+            android:ems="10"
+            android:fontFamily="sans-serif-light"
+            android:hint="male"
+            android:inputType="text"
+            android:maxLength="10"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/writeEyes"
+            style="@style/mainText"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="@color/text"
+            android:ems="10"
+            android:fontFamily="sans-serif-light"
+            android:hint="blue"
+            android:inputType="text"
+            android:maxLength="15"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/writeAge"
+            app:layout_constraintStart_toStartOf="@+id/writeAge"
+            app:layout_constraintTop_toBottomOf="@+id/writeAge" />
+
+        <EditText
+            android:id="@+id/writeHair"
+            style="@style/mainText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:ems="10"
+            android:fontFamily="sans-serif-light"
+            android:hint="black"
+            android:inputType="text"
+            android:maxLength="15"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/writeEyes"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/writeEyes"
+            app:layout_constraintTop_toBottomOf="@+id/writeEyes" />
+
+        <EditText
+            android:id="@+id/writeSkin"
+            style="@style/mainText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="28dp"
+            android:backgroundTint="@color/text"
+            android:ems="10"
+            android:hint="light"
+            android:inputType="text"
+            android:maxLength="10"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/writeHair"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/writeHair"
+            app:layout_constraintTop_toBottomOf="@+id/writeHair" />
+
+        <TextView
+            android:id="@+id/textHair"
+            style="@style/headers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hair_color"
+            app:layout_constraintBottom_toBottomOf="@+id/writeHair"
+            app:layout_constraintEnd_toEndOf="@+id/textEyes"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/textEyes"
+            app:layout_constraintTop_toTopOf="@+id/writeHair" />
+
+        <TextView
+            android:id="@+id/textSkin"
+            style="@style/headers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/skin"
+            app:layout_constraintBottom_toBottomOf="@+id/writeSkin"
+            app:layout_constraintEnd_toEndOf="@+id/textHair"
+            app:layout_constraintStart_toStartOf="@+id/textHair"
+            app:layout_constraintTop_toTopOf="@+id/writeSkin" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/btnNext1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/btn_bg"
+        android:text="@string/btn_next"
+        android:textColor="@color/background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

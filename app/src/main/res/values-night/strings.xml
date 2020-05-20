@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Character Beyond Fantasy</string>
+    <string name="btn_add_new_character">Add new character</string>
+    <string name="btn_my_characters">My characters</string>
+</resources>

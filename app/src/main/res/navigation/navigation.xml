@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/createBasicsFragment">
+
+    <fragment
+        android:id="@+id/createBasicsFragment"
+        android:name="com.example.animaproject.CreateCharacter.CreateBasicsFragment"
+        android:label="fragment_create_basics"
+        tools:layout="@layout/fragment_create_basics" >
+        <action
+            android:id="@+id/action_createBasicsFragment_to_createStatsFragment"
+            app:destination="@id/createStatsFragment"
+            app:enterAnim="@anim/fragment_fade_enter" />
+    </fragment>
+    <fragment
+        android:id="@+id/createStatsFragment"
+        android:name="com.example.animaproject.CreateCharacter.CreateStatsFragment"
+        android:label="fragment_create_stats"
+        tools:layout="@layout/fragment_create_stats" >
+        <action
+            android:id="@+id/action_createStatsFragment_to_createDetailsFragment"
+            app:destination="@id/createDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createDetailsFragment"
+        android:name="com.example.animaproject.CreateCharacter.CreateDetailsFragment"
+        android:label="fragment_character_details"
+        tools:layout="@layout/fragment_character_details" >
+        <action
+            android:id="@+id/action_createDetailsFragment_to_primarySkillsFragment"
+            app:destination="@id/primarySkillsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/primarySkillsFragment"
+        android:name="com.example.animaproject.CreateCharacter.PrimarySkillsFragment"
+        android:label="fragment_primary_skills"
+        tools:layout="@layout/fragment_primary_skills" >
+        <action
+            android:id="@+id/action_primarySkillsFragment_to_createFeatsFragment"
+            app:destination="@id/createFeatsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createFeatsFragment"
+        android:name="com.example.animaproject.CreateCharacter.createFeatsFragment"
+        android:label="fragment_create_feats"
+        tools:layout="@layout/fragment_create_feats" />
+</navigation>

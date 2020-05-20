@@ -1,0 +1,66 @@
+package com.example.animaproject
+
+import android.content.Context
+
+class CharacterDatabase {
+
+    private val DATABASE_VERSION = 2
+    private val DATABASE_NAME = "DB_CHARACTERS"
+    private val TABLE_BASICS = "TAB_CHARACTER_BASICS"
+    private val TABLE_STATS = "TAB_CHARACTER_STATS"
+    private val TABLE_DETAILS = "TAB_CHARACTER_DETAILS"
+    private val TABLE_PR_SKILLS = "TAB_CHARACTER_PR_SKILLS"
+    //private val TABLE_SEC_SKILLS = "TAB_CHARACTER_SEC_SKILLS"
+
+    val CHARACTER_ID = "CHARACTER_ID"
+
+    // TABLE BASICS
+
+    val BAICS_ID = "BAICS_ID"
+    val BAICS_NAME = "BAICS_NAME"
+    val BAICS_GENDER = "BAICS_GENDER"
+    val BAICS_AGE = "BAICS_AGE"
+    val BAICS_EYES = "BAICS_EYES"
+    val BAICS_HAIR = "BAICS_HAIR"
+    val BAICS_SKIN = "BAICS_SKIN"
+    val BAICS_LEVEL = "BAICS_LEVEL"
+    val BAICS_DEV_POINTS = "BAICS_DEV_POINTS"
+    val BAICS_EXP = "BAISCS EXP"
+
+    // TABLE STATS
+
+    val STATS_ID = "STATS_ID"
+
+    val STATS_AGI_VAL = "STATS_AGI_VAL"
+    val STATS_CON_VAL = "STATS_CON_VAL"
+    val STATS_DEX_VAL = "STATS_DEX_VAL"
+    val STATS_STR_VAL = "STATS_STR_VAL"
+    val STATS_INT_VAL = "STATS_INT_VAL"
+    val STATS_PER_VAL = "STATS_PER_VAL"
+    val STATS_POW_VAL = "STATS_POW_VAL"
+    val STATS_WP_VAL = "STATS_WP_VAL"
+
+    val STATS_AGI_MOD = "STATS_AGI_MOD"
+    val STATS_CON_MOD = "STATS_CON_MOD"
+    val STATS_DEX_MOD = "STATS_DEX_MOD"
+    val STATS_STR_MOD = "STATS_STR_MOD"
+    val STATS_INT_MOD = "STATS_INT_MOD"
+    val STATS_PER_MOD = "STATS_PER_MOD"
+    val STATS_POW_MOD = "STATS_POW_MOD"
+    val STATS_WP_MOD = "STATS_WP_MOD"
+
+    val STATS__APPEARANCE = "STATS_APPEARANCE"
+
+    // TABLE DETAILS
+    val DETAILS_RACE = "DETAILS_RACE"
+    val DETAILS_CLASS = "DETAILS_CLASS"
+
+    val PR_ATTACK_PRIM = "PR_ATTACK_PRIM"
+    val PR_DODGE_PRIM = "PR_DODGE_PRIM"
+    val PR_BLOCK_PRIM = "PR_ATTACK_PRIM"
+
+    val PR_ATTACK_MOD = "PR_ATTACK_MOD"
+    val PR_DODGE_MOD = "PR_DODGE_MOD"
+    val PR_BLOCK_MOD = "PR_ATTACK_MOD"
+
+}

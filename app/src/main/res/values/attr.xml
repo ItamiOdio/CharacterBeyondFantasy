@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="logoHorizontal" format="reference" />
+    <attr name="logoSubtitle" format="reference"/>
+    <attr name="splashLogo" format="reference"/>
+</resources>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".CreateCharacter.createFeatsFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="128dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/featsAdventages"
+                style="@style/headers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Adventages"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/writeAdventages"
+                style="@style/mainText"
+                android:layout_width="332dp"
+                android:layout_height="122dp"
+                android:background="@drawable/text_area_bg"
+                android:backgroundTint="@color/background_alt"
+                android:ems="10"
+                android:gravity="top"
+                android:inputType="textPersonName"
+                android:padding="10dp"
+                android:selectAllOnFocus="true"
+                android:text="Write your chosen advantages here"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+            <TextView
+                android:id="@+id/featsDisadventages"
+                style="@style/headers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Disadventages"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/writeAdventages2"
+                style="@style/mainText"
+                android:layout_width="332dp"
+                android:layout_height="122dp"
+                android:background="@drawable/text_area_bg"
+                android:backgroundTint="@color/background_alt"
+                android:ems="10"
+                android:gravity="top"
+                android:inputType="textPersonName"
+                android:padding="10dp"
+                android:selectAllOnFocus="true"
+                android:text="Write your chosen disadvantages here"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnDone"
+            style="@style/buttons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="64dp"
+            android:text="Done"
+            app:layout_constraintBottom_toBottomOf="@+id/btnBack5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/btnBack5"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/btnBack5"
+            style="@style/buttons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:layout_marginBottom="32dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/btn_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
