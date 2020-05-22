@@ -10,22 +10,21 @@ class CharacterDatabase {
     private val TABLE_STATS = "TAB_CHARACTER_STATS"
     private val TABLE_DETAILS = "TAB_CHARACTER_DETAILS"
     private val TABLE_PR_SKILLS = "TAB_CHARACTER_PR_SKILLS"
-    //private val TABLE_SEC_SKILLS = "TAB_CHARACTER_SEC_SKILLS"
 
     val CHARACTER_ID = "CHARACTER_ID"
 
     // TABLE BASICS
 
-    val BAICS_ID = "BAICS_ID"
-    val BAICS_NAME = "BAICS_NAME"
-    val BAICS_GENDER = "BAICS_GENDER"
-    val BAICS_AGE = "BAICS_AGE"
-    val BAICS_EYES = "BAICS_EYES"
-    val BAICS_HAIR = "BAICS_HAIR"
-    val BAICS_SKIN = "BAICS_SKIN"
-    val BAICS_LEVEL = "BAICS_LEVEL"
-    val BAICS_DEV_POINTS = "BAICS_DEV_POINTS"
-    val BAICS_EXP = "BAISCS EXP"
+    val CHAR_ID = "CHAR_ID"
+    val CHAR_NAME = "CHAR_NAME"
+    val CHAR_GENDER = "CHAR_GENDER"
+    val CHAR_AGE = "CHAR_AGE"
+    val CHAR_EYES = "CHAR_EYES"
+    val CHAR_HAIR = "CHAR_HAIR"
+    val CHAR_SKIN = "CHAR_SKIN"
+    val CHAR_LEVEL = "CHAR_LEVEL"
+    val CHAR_DEV_POINTS = "CHAR_DEV_POINTS"
+    val CHAR_EXP = "BAISCS EXP"
 
     // TABLE STATS
 
@@ -54,6 +53,8 @@ class CharacterDatabase {
     // TABLE DETAILS
     val DETAILS_RACE = "DETAILS_RACE"
     val DETAILS_CLASS = "DETAILS_CLASS"
+
+    //TABLE PR_SKILLS
 
     val PR_ATTACK_PRIM = "PR_ATTACK_PRIM"
     val PR_DODGE_PRIM = "PR_DODGE_PRIM"

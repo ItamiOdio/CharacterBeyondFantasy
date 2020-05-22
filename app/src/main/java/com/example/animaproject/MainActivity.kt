@@ -55,6 +55,12 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        btnMyCharacters.setOnClickListener {
+            val intent = Intent(this@MainActivity, CharacterListActivity::class.java)
+            intent.putExtra("key", "Kotlin")
+            startActivity(intent)
+        }
+
     }
 
 

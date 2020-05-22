@@ -5,8 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import androidx.navigation.fragment.findNavController
 
 import com.example.animaproject.R
+import kotlinx.android.synthetic.main.fragment_character_details.*
+import kotlinx.android.synthetic.main.fragment_create_basics.*
 
 /**
  * A simple [Fragment] subclass.
@@ -20,5 +25,62 @@ class CreateDetailsFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_character_details, container, false)
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Navigate between fragments
+
+        btnNext4.setOnClickListener {
+            findNavController().navigate(R.id.action_createDetailsFragment_to_primarySkillsFragment)
+        }
+
+        btnBack4.setOnClickListener {
+            findNavController().navigate(R.id.action_createDetailsFragment_to_createStatsFragment)
+        }
+
+        // Create String variables for selected items
+        var raceFinal = ""
+        var classFinal = ""
+
+        //Create arrays of options, add adapter, implement methods
+
+        val racesOptions = arrayOf("The Nephilim", "Sylvain", "Jayan", "D'Anjayni", "Ebudan", "Daimah", "Duk'Zarist")
+        var classesOptions = arrayOf("Domine", "Figther", "Mystic", "Prowler", "Psychic", "Novel")
+
+        spinRace.adapter = ArrayAdapter<String>(requireContext(), android.R.layout.simple_list_item_1, racesOptions)
+        spinRace.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                raceFinal = "Chose your race"
+            }
+
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                raceFinal = racesOptions[position]
+            }
+        }
+
+        spinClass.adapter = ArrayAdapter<String>(requireContext(), android.R.layout.simple_list_item_1, classesOptions)
+        spinClass.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                classFinal = "Chose your class"
+            }
+
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                classFinal = classesOptions[position]
+            }
+        }
+    }
+
+
 
 }

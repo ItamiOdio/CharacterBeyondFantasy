@@ -18,6 +18,12 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <!-- Character Sheet -->
+    <style name="CharacterSheet" parent="Theme.AppCompat.Light.NoActionBar">
+    <item name="android:windowBackground">@drawable/splash_background</item>
+    </style>s
+
+
     <!--- Text styles -->
 
     <style name="headers">
