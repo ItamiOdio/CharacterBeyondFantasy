@@ -1,16 +1,18 @@
 package com.example.animaproject.CreateCharacter
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.NavController
-import androidx.navigation.Navigation
+import androidx.core.os.bundleOf
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.fragment.findNavController
+import com.example.animaproject.CharacterInfo
 import com.example.animaproject.R
-import kotlinx.android.synthetic.main.activity_create_character.*
 import kotlinx.android.synthetic.main.fragment_create_basics.*
+
 
 /**
  * A simple [Fragment] subclass.
@@ -28,9 +30,22 @@ class CreateBasicsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        var newCharacter = CharacterInfo()
+
+
+
+
         btnNext1.setOnClickListener {
-             findNavController().navigate(R.id.action_createBasicsFragment_to_createStatsFragment)
-            }
+            newCharacter.name = writeName.text.toString()
+            newCharacter.gender = writeGender.text.toString()
+            newCharacter.age = writeAge.text.toString()
+            newCharacter.eyes = writeEyes.text.toString()
+            newCharacter.hair = writeHair.text.toString()
+            newCharacter.skin = writeSkin.text.toString()
+
+            val bundle = bundleOf("character" to newCharacter)
+            findNavController().navigate(R.id.action_createBasicsFragment_to_createStatsFragment, bundle)
         }
- }
+    }
+}
 

@@ -65,7 +65,7 @@
                 android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/writeAdventages2"
+                android:id="@+id/writeDisadvantages"
                 style="@style/mainText"
                 android:layout_width="332dp"
                 android:layout_height="122dp"

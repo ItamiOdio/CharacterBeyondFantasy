@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.example.animaproject.CharacterDatabase
+import com.example.animaproject.CharacterInfo
 import com.example.animaproject.CharacterListActivity
 
 import com.example.animaproject.R
@@ -29,14 +31,17 @@ class createFeatsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        var advantages = ""
-        var disadventages =""
+        var newCharacter : CharacterInfo = arguments?.getSerializable("character") as CharacterInfo
 
         btnBack5.setOnClickListener {
             findNavController().navigate(R.id.action_createFeatsFragment_to_primarySkillsFragment)
         }
 
         btnDone.setOnClickListener {
+            newCharacter.advantages = writeAdventages.text.toString()
+            newCharacter.disadvantages = writeDisadvantages.text.toString()
+            val db=CharacterDatabase(requireContext())
+            db.insertData(newCharacter)
             val intent = Intent(requireContext(), CharacterListActivity::class.java)
             intent.putExtra("key", "Kotlin")
             startActivity(intent)

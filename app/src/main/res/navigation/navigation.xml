@@ -26,6 +26,9 @@
         <action
             android:id="@+id/action_createStatsFragment_to_createBasicsFragment"
             app:destination="@id/createBasicsFragment" />
+        <argument
+            android:name="character"
+            app:argType="com.example.animaproject.CharacterInfo" />
     </fragment>
     <fragment
         android:id="@+id/createDetailsFragment"
@@ -38,6 +41,9 @@
         <action
             android:id="@+id/action_createDetailsFragment_to_createStatsFragment"
             app:destination="@id/createStatsFragment" />
+        <argument
+            android:name="character"
+            app:argType="com.example.animaproject.CharacterInfo" />
     </fragment>
     <fragment
         android:id="@+id/primarySkillsFragment"
@@ -50,6 +56,9 @@
         <action
             android:id="@+id/action_primarySkillsFragment_to_createDetailsFragment"
             app:destination="@id/createDetailsFragment" />
+        <argument
+            android:name="character"
+            app:argType="com.example.animaproject.CharacterInfo" />
     </fragment>
     <fragment
         android:id="@+id/createFeatsFragment"
@@ -59,5 +68,8 @@
         <action
             android:id="@+id/action_createFeatsFragment_to_primarySkillsFragment"
             app:destination="@id/primarySkillsFragment" />
+        <argument
+            android:name="character"
+            app:argType="com.example.animaproject.CharacterInfo" />
     </fragment>
 </navigation>

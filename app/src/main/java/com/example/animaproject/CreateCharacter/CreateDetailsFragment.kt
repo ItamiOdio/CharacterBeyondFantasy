@@ -7,7 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
+import com.example.animaproject.CharacterInfo
 
 import com.example.animaproject.R
 import kotlinx.android.synthetic.main.fragment_character_details.*
@@ -28,16 +31,7 @@ class CreateDetailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        // Navigate between fragments
-
-        btnNext4.setOnClickListener {
-            findNavController().navigate(R.id.action_createDetailsFragment_to_primarySkillsFragment)
-        }
-
-        btnBack4.setOnClickListener {
-            findNavController().navigate(R.id.action_createDetailsFragment_to_createStatsFragment)
-        }
+        var newCharacter : CharacterInfo = arguments?.getSerializable("character") as CharacterInfo
 
         // Create String variables for selected items
         var raceFinal = ""
@@ -78,6 +72,19 @@ class CreateDetailsFragment : Fragment() {
             ) {
                 classFinal = classesOptions[position]
             }
+        }
+
+        // Navigate between fragments
+
+        btnNext4.setOnClickListener {
+            newCharacter.race = raceFinal
+            newCharacter.characterClass = classFinal
+            val bundle = bundleOf("character" to newCharacter)
+            findNavController().navigate(R.id.action_createDetailsFragment_to_primarySkillsFragment, bundle)
+        }
+
+        btnBack4.setOnClickListener {
+            findNavController().navigate(R.id.action_createDetailsFragment_to_createStatsFragment)
         }
     }
 
