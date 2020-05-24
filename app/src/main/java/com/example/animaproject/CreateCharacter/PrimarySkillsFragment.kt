@@ -15,6 +15,7 @@ import com.example.animaproject.CharacterInfo
 import com.example.animaproject.R
 import kotlinx.android.synthetic.main.fragment_create_basics.*
 import kotlinx.android.synthetic.main.fragment_primary_skills.*
+import java.lang.NumberFormatException
 
 /**
  * A simple [Fragment] subclass.
@@ -50,9 +51,21 @@ class PrimarySkillsFragment : Fragment() {
             override fun onTextChanged(s: CharSequence, start: Int,
                                        before: Int, count: Int) {
 
-                attackValue = editText2.text.toString().toInt()
-                devPoints = 75 - (attackValue + blockValue + dodgeValue)
-                editText.text = devPoints.toString()
+                try
+                {
+                    if (editText2.text.toString().toInt() != null)
+                    {
+                        attackValue = editText2.text.toString().toInt()
+                    }
+                }
+                catch (e: NumberFormatException)
+                {
+                    attackValue = 0
+                }
+
+                 devPoints = 75 - (attackValue + blockValue + dodgeValue)
+                 editText.text = devPoints.toString()
+
             }
         })
 
@@ -66,10 +79,23 @@ class PrimarySkillsFragment : Fragment() {
 
             override fun onTextChanged(s: CharSequence, start: Int,
                                        before: Int, count: Int) {
-                blockValue = editText3.text.toString().toInt()
-                devPoints = 75 - (attackValue + blockValue + dodgeValue)
-                editText.text = devPoints.toString()
-            }
+
+                try
+                {
+                    if (editText3.text.toString().toInt() != null)
+                    {
+                        blockValue = editText3.text.toString().toInt()
+                    }
+                }
+                catch (e: NumberFormatException)
+                {
+                    blockValue = 0
+                }
+
+                    devPoints = 75 - (attackValue + blockValue + dodgeValue)
+                    editText.text = devPoints.toString()
+                }
+
         })
 
         editText4.addTextChangedListener(object : TextWatcher {
@@ -82,9 +108,21 @@ class PrimarySkillsFragment : Fragment() {
 
             override fun onTextChanged(s: CharSequence, start: Int,
                                        before: Int, count: Int) {
-                dodgeValue = editText4.text.toString().toInt()
-                devPoints = 75 - (attackValue + blockValue + dodgeValue)
-                editText.text = devPoints.toString()
+                try
+                {
+                    if (editText4.text.toString().toInt() != null)
+                    {
+                        dodgeValue = editText4.text.toString().toInt()
+                    }
+                }
+                catch (e: NumberFormatException)
+                {
+                    dodgeValue = 0
+                }
+
+                    devPoints = 75 - (attackValue + blockValue + dodgeValue)
+                    editText.text = devPoints.toString()
+
             }
         })
 
@@ -115,8 +153,5 @@ class PrimarySkillsFragment : Fragment() {
 
 
     }
-
-
-
 
 }

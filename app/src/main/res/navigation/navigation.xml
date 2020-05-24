@@ -13,7 +13,8 @@
         <action
             android:id="@+id/action_createBasicsFragment_to_createStatsFragment"
             app:destination="@id/createStatsFragment"
-            app:enterAnim="@anim/fragment_fade_enter" />
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
     </fragment>
     <fragment
         android:id="@+id/createStatsFragment"
@@ -22,7 +23,9 @@
         tools:layout="@layout/fragment_create_stats" >
         <action
             android:id="@+id/action_createStatsFragment_to_createDetailsFragment"
-            app:destination="@id/createDetailsFragment" />
+            app:destination="@id/createDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
         <action
             android:id="@+id/action_createStatsFragment_to_createBasicsFragment"
             app:destination="@id/createBasicsFragment" />
@@ -37,7 +40,9 @@
         tools:layout="@layout/fragment_character_details" >
         <action
             android:id="@+id/action_createDetailsFragment_to_primarySkillsFragment"
-            app:destination="@id/primarySkillsFragment" />
+            app:destination="@id/primarySkillsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
         <action
             android:id="@+id/action_createDetailsFragment_to_createStatsFragment"
             app:destination="@id/createStatsFragment" />
@@ -52,7 +57,9 @@
         tools:layout="@layout/fragment_primary_skills" >
         <action
             android:id="@+id/action_primarySkillsFragment_to_createFeatsFragment"
-            app:destination="@id/createFeatsFragment" />
+            app:destination="@id/createFeatsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
         <action
             android:id="@+id/action_primarySkillsFragment_to_createDetailsFragment"
             app:destination="@id/createDetailsFragment" />

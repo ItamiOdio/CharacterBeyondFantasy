@@ -6,6 +6,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
         <item name="logoHorizontal">@drawable/ic_animalogolight</item>
         <item name="logoSubtitle">@drawable/ic_subtitlelight</item>
         <item name="splashLogo">@drawable/ic_animalogolight</item>
