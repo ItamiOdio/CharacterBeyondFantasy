@@ -133,6 +133,7 @@ import java.util.*
             TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
         }
 
+        // insert data into database
         fun insertData(character : CharacterInfo)
         {
             val db = this.writableDatabase
@@ -199,6 +200,7 @@ import java.util.*
             }
         }
 
+        // get character with given id from table
         fun getSingleCharacter(id: Long) : CharacterInfo
         {
             val db = this.readableDatabase
@@ -267,6 +269,7 @@ import java.util.*
 
         }
 
+        // get list of all characters in table
         fun getCharacters(): List<CharacterInfo>? {
             var charList : MutableList<CharacterInfo> = ArrayList()
             val db = this.readableDatabase
@@ -339,6 +342,7 @@ import java.util.*
             return charList
         }
 
+        // delete character from database
         fun deleteCharacter(id: Int)
         {
             val db = this.writableDatabase

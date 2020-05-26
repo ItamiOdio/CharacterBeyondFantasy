@@ -49,6 +49,8 @@ class MainActivity : AppCompatActivity() {
         }
     }))
 
+        // Set listeners for navigation
+
         btnAddCharacter.setOnClickListener {
             val intent = Intent(this@MainActivity, CreateCharacterActivity::class.java)
             intent.putExtra("key", "Kotlin")

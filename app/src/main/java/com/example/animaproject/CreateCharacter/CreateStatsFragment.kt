@@ -37,14 +37,16 @@ class CreateStatsFragment : Fragment() {
         var newCharacter : CharacterInfo = arguments?.getSerializable("character") as CharacterInfo
 
 
+        //Generate random stats for the character
+        //Process of generating stats goes by the rules described in Anima Beyond Fantasy : Core Rulebook
         btnGenerate.setOnClickListener {
             run {
                 val generatedValues = Array(8) {
-                    Random.nextInt(3, 11)
+                    Random.nextInt(3, 11) // generate 8 random values between 3 and 10
                 }
-                var minGenerated = generatedValues.min()
+                var minGenerated = generatedValues.min() // find min value in generated array
 
-                generatedValues[generatedValues.indexOf(minGenerated)] = 9
+                generatedValues[generatedValues.indexOf(minGenerated)] = 9 //replace value with 9
 
                 valAgi.setText(Integer.toString(generatedValues[0]))
                 valCon.setText(Integer.toString(generatedValues[1]))
@@ -58,6 +60,7 @@ class CreateStatsFragment : Fragment() {
             }
         }
 
+        // Fill text fields with array values and navigate between fragments
         btnNext2.setOnClickListener {
             newCharacter.agility = valAgi.text.toString().toInt()
             newCharacter.constitution = valCon.text.toString().toInt()
@@ -67,6 +70,7 @@ class CreateStatsFragment : Fragment() {
             newCharacter.perception = valPer.text.toString().toInt()
             newCharacter.power = valPow.text.toString().toInt()
             newCharacter.willpower = valWp.text.toString().toInt()
+
 
             newCharacter.agilityMod = setModifier(newCharacter.agility)
             newCharacter.constitutionMod = setModifier(newCharacter.constitution)
@@ -81,11 +85,9 @@ class CreateStatsFragment : Fragment() {
             findNavController().navigate(R.id.action_createStatsFragment_to_createDetailsFragment, bundle)
         }
 
-        btnBack2.setOnClickListener {
-            findNavController().navigate(R.id.action_createStatsFragment_to_createBasicsFragment)
-        }
     }
 
+    // Set modifiers for attributes. Modifier value depends on attribute, described in the rulebook
     private fun setModifier(x : Int): Int {
         val modifier: Int
         when(x)

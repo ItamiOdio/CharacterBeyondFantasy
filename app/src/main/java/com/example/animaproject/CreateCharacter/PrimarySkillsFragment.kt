@@ -34,12 +34,15 @@ class PrimarySkillsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         var newCharacter : CharacterInfo = arguments?.getSerializable("character") as CharacterInfo
 
-        var attackValue = editText2.text.toString().toInt()
-        var blockValue = editText3.text.toString().toInt()
-        var dodgeValue = editText4.text.toString().toInt()
-        var devPoints = 75 - (attackValue + blockValue + dodgeValue)
+        var attackValue = editText2.text.toString().toInt() //base attack
+        var blockValue = editText3.text.toString().toInt() //base block
+        var dodgeValue = editText4.text.toString().toInt() //base dodge
+        var devPoints = 75 - (attackValue + blockValue + dodgeValue) // number of development points that can be used for primary abilities
         editText.text = devPoints.toString()
 
+        // Implementation for attack, block and dodge
+
+        //if the value in a row changes, change value of remaining points. Treat null as 0
         editText2.addTextChangedListener(object : TextWatcher {
 
             override fun afterTextChanged(s: Editable) {}
@@ -126,17 +129,22 @@ class PrimarySkillsFragment : Fragment() {
             }
         })
 
-        btnNext3.setOnClickListener {
 
+        btnNext3.setOnClickListener {
+            //set values of abilities
             newCharacter.baseAttack = attackValue
             newCharacter.baseDodge = dodgeValue
             newCharacter.baseBlock = blockValue
             newCharacter.baseFatigue = newCharacter.constitution
             newCharacter.baseMovement = newCharacter.agility
 
+            //set modifiers for attributes - for attack and block from dexterity, for dodge - from agility
+
             newCharacter.specialAttack = newCharacter.dexterityMod
             newCharacter.specialBlock = newCharacter.dexterityMod
             newCharacter.specialDodge = newCharacter.agilityMod
+
+            // sum up the values to get final values for abilities
 
             newCharacter.finalAttack = newCharacter.baseAttack + newCharacter.specialAttack
             newCharacter.finalBlock = newCharacter.baseBlock + newCharacter.specialBlock
@@ -145,10 +153,6 @@ class PrimarySkillsFragment : Fragment() {
             newCharacter.finalMovement = newCharacter.baseMovement + newCharacter.specialMovement
             val bundle = bundleOf("character" to newCharacter)
             findNavController().navigate(R.id.action_primarySkillsFragment_to_createFeatsFragment, bundle)
-        }
-
-        btnBack3.setOnClickListener {
-            findNavController().navigate(R.id.action_primarySkillsFragment_to_createDetailsFragment)
         }
 
 

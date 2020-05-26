@@ -30,12 +30,12 @@ class CreateBasicsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        var newCharacter = CharacterInfo()
+        var newCharacter = CharacterInfo() // create object instance for the new character
 
-
-
-
+        //set listener to the button
         btnNext1.setOnClickListener {
+
+            // fill basic information with data provided by user
             newCharacter.name = writeName.text.toString()
             newCharacter.gender = writeGender.text.toString()
             newCharacter.age = writeAge.text.toString()
@@ -43,6 +43,7 @@ class CreateBasicsFragment : Fragment() {
             newCharacter.hair = writeHair.text.toString()
             newCharacter.skin = writeSkin.text.toString()
 
+            // go to the next fragment with data in bundle
             val bundle = bundleOf("character" to newCharacter)
             findNavController().navigate(R.id.action_createBasicsFragment_to_createStatsFragment, bundle)
         }

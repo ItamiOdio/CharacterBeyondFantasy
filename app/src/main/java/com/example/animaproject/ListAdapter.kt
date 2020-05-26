@@ -1,15 +1,10 @@
 package com.example.animaproject
-
-import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.Animation
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.signle_list_item.view.*
 
@@ -28,6 +23,7 @@ class ListAdapter (private val characterList : ArrayList<CharacterInfo>) : Recyc
         return characterList.size
     }
 
+    // set text from database in view
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
        val character : CharacterInfo = characterList[position]
         val context = holder.imageAvatar.context
@@ -38,12 +34,13 @@ class ListAdapter (private val characterList : ArrayList<CharacterInfo>) : Recyc
 
         holder.itemView.setOnClickListener {
            val intent = Intent (context, CharacterSheetActivity::class.java)
-           val char_id = character.characterID.toInt()
-           intent.putExtra("charid", char_id)
+           val charId = character.characterID.toInt()
+           intent.putExtra("charid", charId)
             context.startActivity(intent)
         }
 
     }
+
 
         inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 

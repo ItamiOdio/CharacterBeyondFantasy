@@ -23,7 +23,7 @@ class CharacterListActivity : AppCompatActivity() {
 
         var db = CharacterDatabase(this)
 
-
+        // set layout to recycler view, fill with data from database
         recyclerChars.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
         var characters = db.getCharacters() as ArrayList<CharacterInfo>
         recyclerChars.adapter = ListAdapter(characters)

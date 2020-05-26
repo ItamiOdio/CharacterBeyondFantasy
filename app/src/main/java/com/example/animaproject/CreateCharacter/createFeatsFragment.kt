@@ -31,11 +31,8 @@ class createFeatsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // get object with character that is being created
         var newCharacter : CharacterInfo = arguments?.getSerializable("character") as CharacterInfo
-
-        btnBack5.setOnClickListener {
-            findNavController().navigate(R.id.action_createFeatsFragment_to_primarySkillsFragment)
-        }
 
         btnDone.setOnClickListener {
             newCharacter.advantages = writeAdventages.text.toString()

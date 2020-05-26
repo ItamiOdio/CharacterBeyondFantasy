@@ -10,20 +10,23 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import kotlinx.android.synthetic.main.activity_character_sheet.*
 
 class CharacterSheetActivity : AppCompatActivity()  {
-    var db = CharacterDatabase(this)
-    var charId = -1
+    var db = CharacterDatabase(this) //database instance
+    var charId = -1 // id of character
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_character_sheet)
 
+        // set action bar for activity
         setSupportActionBar(toolbar2)
-        val bundle = intent.extras
-        charId = bundle?.getInt("charid") ?: -1
+        val bundle = intent.extras //get extras from intent
 
+        charId = bundle?.getInt("charid") ?: -1 // if extras with given key are not null, set id for a given value
 
+        // get character from database by given id
         val character :CharacterInfo = db.getSingleCharacter(charId.toLong())
 
+        // fill text fields with data
         text_show_characterName.text = character.name
         textRace.text = character.race
         textClass.text = character.characterClass
@@ -65,6 +68,8 @@ class CharacterSheetActivity : AppCompatActivity()  {
 
     }
 
+    // ACTION BAR
+
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
 
         menuInflater.inflate(R.menu.menu_character_sheet, menu)
@@ -72,14 +77,14 @@ class CharacterSheetActivity : AppCompatActivity()  {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        var itemView = item.itemId
+        var itemView = item.itemId // item chosen on action bar
         when(itemView)
         {
             R.id.editChar -> (Toast.makeText(applicationContext, "Coming soon", Toast.LENGTH_SHORT)).show()
             R.id.deleteChar ->
             {
-                db.deleteCharacter(charId)
-                val intent = Intent(this, CharacterListActivity::class.java)
+                db.deleteCharacter(charId) //delete character
+                val intent = Intent(this, CharacterListActivity::class.java) //move to the list of characters
                 startActivity(intent)
             }
         }

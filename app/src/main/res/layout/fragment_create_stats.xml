@@ -12,23 +12,10 @@
         style="@style/buttons"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="64dp"
-        android:text="@string/btn_next"
-        app:layout_constraintBottom_toBottomOf="@+id/btnBack2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btnBack2"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/btnBack2"
-        style="@style/buttons"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
         android:layout_marginBottom="32dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="@string/btn_back"
+        android:text="@string/btn_next"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView

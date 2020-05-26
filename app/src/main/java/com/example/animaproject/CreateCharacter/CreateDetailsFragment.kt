@@ -31,16 +31,17 @@ class CreateDetailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        // get object with character that is being created
         var newCharacter : CharacterInfo = arguments?.getSerializable("character") as CharacterInfo
 
         // Create String variables for selected items
         var raceFinal = ""
         var classFinal = ""
 
-        //Create arrays of options, add adapter, implement methods
-
+        // CREATE SPINNERS
+        //Create arrays of race and class options, add adapter, override functions
         val racesOptions = arrayOf("The Nephilim", "Sylvain", "Jayan", "D'Anjayni", "Ebudan", "Daimah", "Duk'Zarist")
-        var classesOptions = arrayOf("Domine", "Figther", "Mystic", "Prowler", "Psychic", "Novel")
+        val classesOptions = arrayOf("Domine", "Figther", "Mystic", "Prowler", "Psychic", "Novel")
 
         spinRace.adapter = ArrayAdapter<String>(requireContext(), android.R.layout.simple_list_item_1, racesOptions)
         spinRace.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
@@ -74,7 +75,7 @@ class CreateDetailsFragment : Fragment() {
             }
         }
 
-        // Navigate between fragments
+        // Navigate to the next fragment with data in bundle
 
         btnNext4.setOnClickListener {
             newCharacter.race = raceFinal
@@ -83,9 +84,6 @@ class CreateDetailsFragment : Fragment() {
             findNavController().navigate(R.id.action_createDetailsFragment_to_primarySkillsFragment, bundle)
         }
 
-        btnBack4.setOnClickListener {
-            findNavController().navigate(R.id.action_createDetailsFragment_to_createStatsFragment)
-        }
     }
 
 
